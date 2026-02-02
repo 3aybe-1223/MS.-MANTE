@@ -1,0 +1,104 @@
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #ffd1dc, #ff9ebc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.8s ease;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* POEM */
+.poem-card {
+  background: #fff0f5;
+  padding: 35px;
+  border-radius: 18px;
+  text-align: center;
+  max-width: 380px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.poem {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 20px 0;
+}
+
+/* BUTTON */
+button {
+  padding: 12px 26px;
+  border: none;
+  border-radius: 20px;
+  background: #ff5c8a;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+button:hover {
+  background: #ff3f75;
+}
+
+/* ENVELOPE */
+.container {
+  text-align: center;
+}
+
+.envelope {
+  position: relative;
+  width: 500px;
+  height: 420px;
+  background: #ff7aa2;
+  border-radius: 0 0 16px 16px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.flap {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #ff5c8a;
+  clip-path: polygon(0 0, 50% 55%, 100% 0);
+  transform-origin: top;
+  transition: transform 1s ease;
+  z-index: 3;
+}
+
+.letter {
+  position: absolute;
+  bottom: -150%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  background: #fff0f5;
+  padding: 20px;
+  border-radius: 12px;
+  transition: bottom 1s ease;
+  z-index: 2;
+}
+
+.envelope.open .flap {
+  transform: rotateX(180deg);
+}
+
+.envelope.open .letter {
+  bottom: 10px;
+}
